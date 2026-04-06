@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bordeaux: #8B2635;
+  --creme: #F9F4EE;
+  --accent: #C47A1E;
+}
+
+body {
+  color: #1a1a1a;
+  background: #F9F4EE;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Georgia, serif;
+}
+
+@layer components {
+  .btn-bordeaux {
+    @apply bg-bordeaux-700 text-white px-6 py-3 rounded-lg font-semibold
+           hover:bg-bordeaux-800 transition-colors duration-200
+           focus:outline-none focus:ring-2 focus:ring-bordeaux-500 focus:ring-offset-2;
+  }
+  .btn-outline {
+    @apply border-2 border-bordeaux-700 text-bordeaux-700 px-6 py-3 rounded-lg
+           font-semibold hover:bg-bordeaux-700 hover:text-white transition-colors duration-200;
+  }
+  .btn-accent {
+    @apply bg-accent text-white px-6 py-3 rounded-lg font-semibold
+           hover:bg-accent-600 transition-colors duration-200;
+  }
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-100 p-6
+           hover:shadow-md transition-shadow duration-200;
+  }
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  .badge-bordeaux {
+    @apply badge bg-bordeaux-100 text-bordeaux-700;
+  }
+  .badge-accent {
+    @apply badge bg-accent-50 text-accent-700;
+  }
+  .badge-green {
+    @apply badge bg-green-100 text-green-800;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F9F4EE;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4c5b5;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8B2635;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
