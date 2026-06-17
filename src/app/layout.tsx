@@ -1,6 +1,20 @@
 import type { Metadata } from "next";
-import { Baloo_2, Inter } from 'next/font/google';
+import { Syne, Inter, Baloo_2 } from 'next/font/google';
 import "./globals.css";
+
+const syne = Syne({
+  subsets: ['latin'],
+  weight: ['700', '800'],
+  display: 'swap',
+  variable: '--font-syne',
+});
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+  variable: '--font-inter',
+});
 
 const baloo2 = Baloo_2({
   subsets: ['latin'],
@@ -9,17 +23,10 @@ const baloo2 = Baloo_2({
   variable: '--font-baloo2',
 });
 
-const inter = Inter({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
-  display: 'swap',
-  variable: '--font-inter',
-});
-
 export const metadata: Metadata = {
-  title: "Kookla — La nouvelle façon de réserver votre épilation laser",
+  title: "Kookla — L'épilation laser, enfin simple.",
   description:
-    "Kookla compare les centres laser près de vous, réserve votre séance en 2 clics et vous fait gagner des KCoins à chaque visite.",
+    "Kookla réunit les meilleurs centres laser de Paris sur une seule plateforme. Comparez, réservez et payez en 2 minutes — sans appel, sans galère.",
 };
 
 export default function RootLayout({
@@ -28,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={`${baloo2.variable} ${inter.variable}`}>
+    <html lang="fr" className={`${syne.variable} ${inter.variable} ${baloo2.variable}`}>
       <body className="antialiased">{children}</body>
     </html>
   );
